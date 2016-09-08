@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+<h2>下書きを保存しました</h2>
+
+<h3>以下の内容でよろしいですか？</h3>
+
+<%= form_for(@blog) do |f| %>
+    <%= f.hidden_field :title %>
+    <%= f.hidden_field :status, :value => 2 %>
+    
+    <p>タイトル:<%= @blog.title %></p>
+    
+    <div class="actions">
+      <%= f.submit %>
+    </div>
+<% end %>
