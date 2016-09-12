@@ -1,8 +1,11 @@
 Rails.application.routes.draw do
   
-  resources :blogs do
+  
+  resources :blogs, only: [:index,:show,:edit,:update,:new, :create,:destroy] do
     collection do
       post :confrim
+      get :draft
+      get :deleted
     end
   end
   
